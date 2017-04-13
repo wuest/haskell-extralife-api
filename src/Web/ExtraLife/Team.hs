@@ -2,8 +2,8 @@
 
 -- | Provides the 'Team' type
 --
--- Generally instantiated by 'ExtraLife.API.teamInfo'
-module ExtraLife.Team where
+-- Generally instantiated by 'Web.ExtraLife.API.teamInfo'
+module Web.ExtraLife.Team where
 
 import Prelude
 import Data.Time    as Time

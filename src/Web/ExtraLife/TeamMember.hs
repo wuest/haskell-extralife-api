@@ -4,8 +4,8 @@
 -- compared to the 'User' type, 'isTeamCaptain' and lacks much of the context
 -- provided by the 'User' type.
 --
--- Generally instantiated by 'ExtraLife.API.teamMembers' (returned as a List)
-module ExtraLife.TeamMember where
+-- Generally instantiated by 'Web.ExtraLife.API.teamMembers' (returned as a List)
+module Web.ExtraLife.TeamMember where
 
 import Prelude
 import Data.Time    as Time

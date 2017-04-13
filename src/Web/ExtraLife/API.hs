@@ -4,7 +4,7 @@
 -- information, user donations, team information and team membership lists.
 -- All reference IDs are of type Int, and non-basic types are unnecessary to
 -- represent the data returned from the API.
-module ExtraLife.API
+module Web.ExtraLife.API
     (
       -- * Interfaces to the remote API
       userInfo
@@ -20,10 +20,10 @@ import Network.HTTP.Client.TLS as TLS
 import Data.Aeson              as Aeson
 import Data.ByteString.Lazy             ( ByteString )
 
-import ExtraLife.User                   ( User )
-import ExtraLife.Donation               ( Donation )
-import ExtraLife.Team                   ( Team )
-import ExtraLife.TeamMember             ( TeamMember )
+import Web.ExtraLife.User                   ( User )
+import Web.ExtraLife.Donation               ( Donation )
+import Web.ExtraLife.Team                   ( Team )
+import Web.ExtraLife.TeamMember             ( TeamMember )
 
 -- Base for all URLS comprising the ExtraLife API
 elRoot :: String

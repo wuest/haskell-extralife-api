@@ -2,8 +2,8 @@
 
 -- | Provides the 'Donation' type
 --
--- Generally instantiated by 'ExtraLife.API.recentDonations'
-module ExtraLife.Donation where
+-- Generally instantiated by 'Web.ExtraLife.API.recentDonations'
+module Web.ExtraLife.Donation where
 
 import Prelude
 import Data.Time    as Time

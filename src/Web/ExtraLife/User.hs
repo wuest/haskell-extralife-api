@@ -2,8 +2,8 @@
 
 -- | Provides the 'User' type
 --
--- Generally instantiated by 'ExtraLife.API.userInfo'
-module ExtraLife.User where
+-- Generally instantiated by 'Web.ExtraLife.API.userInfo'
+module Web.ExtraLife.User where
 
 import Prelude
 import Data.Time    as Time
