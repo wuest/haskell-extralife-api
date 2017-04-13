@@ -8,14 +8,15 @@ import Data.Text             (Text)
 import GHC.Generics          (Generic)
 import Prelude
 
-data User = User { displayName       :: !Text
-                 , totalRaisedAmount :: Float
-                 , fundraisingGoal   :: Float
-                 , participantID     :: Int
-                 , createdOn         :: !Time.UTCTime
-                 , avatarImageURL    :: !String
-                 , teamID            :: Maybe Int
-                 , isTeamCaptain     :: Bool
-                 } deriving ( Show, Generic )
+data User = User
+    { displayName       :: !Text
+    , totalRaisedAmount :: Float
+    , fundraisingGoal   :: Float
+    , participantID     :: Int
+    , createdOn         :: !Time.UTCTime
+    , avatarImageURL    :: !String
+    , teamID            :: Maybe Int
+    , isTeamCaptain     :: Bool
+    } deriving ( Show, Generic )
 instance FromJSON User
 instance ToJSON User
