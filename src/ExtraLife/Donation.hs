@@ -1,13 +1,18 @@
 {-# LANGUAGE DeriveGeneric #-}
 
+-- | Provides the 'Donation' type
+--
+-- Generally instantiated by 'ExtraLife.API.recentDonations'
 module ExtraLife.Donation where
 
-import Data.Aeson   as Aeson
-import Data.Time    as Time
-import Data.Text             (Text)
-import GHC.Generics          (Generic)
 import Prelude
+import Data.Time    as Time
+import Data.Text             ( Text )
+import GHC.Generics          ( Generic )
 
+import Data.Aeson   as Aeson
+
+-- | Represents a single donation made to a donation drive.
 data Donation = Donation
     { message :: Maybe Text
     , createdOn :: !Time.UTCTime

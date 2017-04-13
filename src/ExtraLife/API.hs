@@ -1,5 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+-- | The ExtraLife API is extremely simple, providing interfaces to fetch user
+-- information, user donations, team information and team membership lists.
+-- All reference IDs are of type Int, and non-basic types are unnecessary to
+-- represent the data returned from the API.
 module ExtraLife.API
     (
       -- * Interfaces to the remote API
@@ -14,12 +18,12 @@ import Prelude
 import Network.HTTP.Client     as HC
 import Network.HTTP.Client.TLS as TLS
 import Data.Aeson              as Aeson
-import Data.ByteString.Lazy             (ByteString)
+import Data.ByteString.Lazy             ( ByteString )
 
-import ExtraLife.User                   (User)
-import ExtraLife.Donation               (Donation)
-import ExtraLife.Team                   (Team)
-import ExtraLife.TeamMember             (TeamMember)
+import ExtraLife.User                   ( User )
+import ExtraLife.Donation               ( Donation )
+import ExtraLife.Team                   ( Team )
+import ExtraLife.TeamMember             ( TeamMember )
 
 -- Base for all URLS comprising the ExtraLife API
 elRoot :: String
@@ -60,21 +64,25 @@ teamInfo' = parseRequest_ . teamInfoRaw
 teamMembers' :: Int -> Request
 teamMembers' = parseRequest_ . teamMembersRaw
 
+-- | Fetches a given user's information, given a UID
 userInfo :: Int -> IO (Maybe User)
 userInfo u = do
     user <- fetchFor $ userInfo' u
     return (Aeson.decode user :: Maybe User)
 
+-- | Fetches all recent donations for a given user
 recentDonations :: Int -> IO (Maybe [Donation])
 recentDonations u = do
     user <- fetchFor $ recentDonations' u
     return (Aeson.decode user :: Maybe [Donation])
 
+-- | Fetches all information about a team except for members, given a Team ID
 teamInfo :: Int -> IO (Maybe Team)
 teamInfo t = do
     team <- fetchFor $ teamInfo' t
     return (Aeson.decode team :: Maybe Team)
 
+-- | Fetches members of a team, if any, given a Team ID
 teamMembers :: Int -> IO (Maybe [TeamMember])
 teamMembers t = do
     team <- fetchFor $ teamMembers' t

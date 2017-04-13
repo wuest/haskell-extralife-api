@@ -1,13 +1,18 @@
 {-# LANGUAGE DeriveGeneric #-}
 
+-- | Provides the 'User' type
+--
+-- Generally instantiated by 'ExtraLife.API.userInfo'
 module ExtraLife.User where
 
-import Data.Aeson   as Aeson
+import Prelude
 import Data.Time    as Time
 import Data.Text             (Text)
 import GHC.Generics          (Generic)
-import Prelude
 
+import Data.Aeson   as Aeson
+
+-- | Represents a user's information
 data User = User
     { displayName       :: !Text
     , totalRaisedAmount :: Float
