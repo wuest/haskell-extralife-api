@@ -16,11 +16,17 @@ import Data.Aeson   as Aeson
 
 -- | Represents a single member of a given team
 data TeamMember =
-    TeamMember { displayName    :: !Text
-               , participantID  :: Int
-               , createdOn      :: !Time.UTCTime
-               , avatarImageURL :: !String
-               , isTeamCaptain  :: Bool
+    TeamMember { displayName     :: !Text
+               , fundraisingGoal :: Float
+               , participantID   :: Int
+               , teamName        :: Text
+               , eventName       :: Text
+               , avatarImageURL  :: !String
+               , createdDateUTC  :: !Time.UTCTime
+               , sumDonations    :: Float
+               , teamID          :: Int
+               , isTeamCaptain   :: Bool
+               , numDonations    :: Int
                } deriving ( Show, Generic )
 instance FromJSON TeamMember
 instance ToJSON TeamMember

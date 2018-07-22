@@ -27,7 +27,7 @@ import Web.ExtraLife.TeamMember             ( TeamMember )
 
 -- Base for all URLS comprising the ExtraLife API
 elRoot :: String
-elRoot = "https://www.extra-life.org/index.cfm?fuseaction=donorDrive."
+elRoot = "https://www.extra-life.org/api/"
 
 -- Default HTTP Client settings reasonable for most use cases
 httpSettings :: HC.ManagerSettings
@@ -41,16 +41,16 @@ fetchFor req = do
     return $ responseBody response
 
 userInfoRaw :: Int -> String
-userInfoRaw = (((elRoot ++ "participant&participantID=") ++) . (++ "&format=json")) . show
+userInfoRaw = ((elRoot ++ "participants/") ++) . show
 
 recentDonationsRaw :: Int -> String
-recentDonationsRaw = (((elRoot ++ "participantDonations&participantID=") ++) . (++ "&format=json")) . show
+recentDonationsRaw = (((elRoot ++ "participants/") ++) . (++ "/donations")) . show
 
 teamInfoRaw :: Int -> String
-teamInfoRaw = (((elRoot ++ "team&teamID=") ++) . (++ "&format=json")) . show
+teamInfoRaw = ((elRoot ++ "teams/") ++) . show
 
 teamMembersRaw :: Int -> String
-teamMembersRaw = (((elRoot ++ "teamParticipants&teamID=") ++) . (++ "&format=json")) . show
+teamMembersRaw = (((elRoot ++ "teams/") ++) . (++ "/participants")) . show
 
 userInfo' :: Int -> Request
 userInfo' = parseRequest_ . userInfoRaw

@@ -14,14 +14,14 @@ import Data.Aeson   as Aeson
 
 -- | Represents a user's information
 data User = User
-    { displayName       :: !Text
-    , totalRaisedAmount :: Float
-    , fundraisingGoal   :: Float
-    , participantID     :: Int
-    , createdOn         :: !Time.UTCTime
-    , avatarImageURL    :: !String
-    , teamID            :: Maybe Int
-    , isTeamCaptain     :: Bool
+    { displayName     :: !Text
+    , fundraisingGoal :: Float
+    , participantID   :: Int
+    , eventName       :: Text
+    , avatarImageURL  :: !String
+    , createdDateUTC  :: !Time.UTCTime
+    , sumDonations    :: Float
+    , numDonations    :: Int
     } deriving ( Show, Generic )
 instance FromJSON User
 instance ToJSON User
