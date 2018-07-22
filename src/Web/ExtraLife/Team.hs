@@ -14,12 +14,14 @@ import Data.Aeson   as Aeson
 
 -- | Represents a team of donation drive participants
 data Team = Team
-    { totalRaisedAmount :: Float
-    , fundraisingGoal   :: Float
-    , createdOn         :: !Time.UTCTime
-    , avatarImageURL    :: !String
-    , teamID            :: Int
-    , name              :: !Text
+    { fundraisingGoal :: Float
+    , eventName       :: Text
+    , avatarImageURL  :: !String
+    , createdDateUTC  :: !Time.UTCTime
+    , sumDonations    :: Float
+    , teamID          :: Int
+    , name            :: !Text
+    , numDonations    :: Int
     } deriving ( Show, Generic )
 instance FromJSON Team
 instance ToJSON Team

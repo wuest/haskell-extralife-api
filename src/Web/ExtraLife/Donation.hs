@@ -14,11 +14,13 @@ import Data.Aeson   as Aeson
 
 -- | Represents a single donation made to a donation drive.
 data Donation = Donation
-    { message :: Maybe Text
-    , createdOn :: !Time.UTCTime
-    , donorName :: Maybe Text
+    { displayName    :: Maybe Text
+    , message        :: Maybe Text
+    , participantID  :: Int
+    , amount         :: Float
+    , donorID        :: Text
+    , createdDateUTC :: !Time.UTCTime
     , avatarImageURL :: !String
-    , donationAmount :: Float
     } deriving ( Show, Generic )
 instance FromJSON Donation
 instance ToJSON Donation
