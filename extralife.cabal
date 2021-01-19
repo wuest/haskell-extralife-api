@@ -27,9 +27,9 @@ library
                        Web.ExtraLife.User
   build-depends:
     base            >= 4.8 && < 5.0,
-    http-client     >= 0.5 && < 0.6,
+    http-client     >= 0.5 && < 0.8,
     http-client-tls >= 0.3 && < 0.4,
-    aeson           >= 1.0 && < 1.5,
-    bytestring      >= 0.10 && < 0.11,
-    time            >= 1.6 && < 1.10,
+    aeson           >= 1.0 && < 1.6,
+    bytestring      >= 0.10 && < 0.12,
+    time            >= 1.6 && < 1.12,
     text            >= 1.2 && < 1.3
