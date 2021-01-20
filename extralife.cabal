@@ -7,7 +7,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Tina Wuest
 maintainer:          tina@wuest.me
-copyright:           (c) 2017 Tina Wuest
+copyright:           2017-2021 Tina Wuest
 category:            Web
 build-type:          Simple
 cabal-version:       >= 1.10
