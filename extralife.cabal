@@ -31,5 +31,5 @@ library
                     , http-client-tls >= 0.3  && < 0.4
                     , aeson           >= 1.0  && < 1.6
                     , bytestring      >= 0.10 && < 0.12
-                    , time            >= 1.6  && < 1.12
+                    , time            >= 1.6  && < 1.13
                     , text            >= 1.2  && < 1.3
