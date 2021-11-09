@@ -18,7 +18,7 @@ data Donation = Donation
     , message        :: Maybe Text
     , participantID  :: Int
     , amount         :: Float
-    , donorID        :: Text
+    , donorID        :: Maybe Text
     , createdDateUTC :: !Time.UTCTime
     , avatarImageURL :: !String
     } deriving ( Show, Generic )
