@@ -1,5 +1,5 @@
 name:                extralife
-version:             0.2.0.2
+version:             0.2.0.3
 synopsis:            API Client for ExtraLife team and user data
 description:         Provides types and helper functions for fetching data from ExtraLife about donation drives (participants, teams, donations)
 homepage:            https://github.com/wuest/haskell-extralife-api
@@ -7,7 +7,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Tina Wuest
 maintainer:          tina@wuest.me
-copyright:           2017-2021 Tina Wuest
+copyright:           2017-2026 Tina Wuest
 category:            Web
 build-type:          Simple
 cabal-version:       >= 1.10
